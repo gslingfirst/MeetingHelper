@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">MeetingHelper</string>
+    <string name="host">http://111.229.5.111:8080</string>
+    <string name="prompt_password">输入密码，最多15个字符</string>
+    <string name="prompt_name">账户名，字母或数字，最多15个</string>
+    <string name="prompt_admin">输入管理员的名字</string>
+    <string name="action_sign_in">登录</string>
+    <string name="action_sign_up">注册</string>
+    <string name="action_sign_up_admin">注册管理员</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="start_time">开始时间</string>
+    <string name="end_time">结束时间</string>
+    <string name="prompt_topic">会议主题，不超过20字</string>
+    <string name="account_empty">请输入账号</string>
+    <string name="passwd_empty">请输入密码</string>
+    <string name="log_out">退出登录</string>
+    <string name="share">分享</string>
+    <string name="save">保存</string>
 </resources>
