@@ -4,78 +4,121 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/main_bg"
     tools:context=".CreateMeetingActivity">
 
+    <TextView
+        android:id="@+id/choose_room"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="50dp"
+        android:text="会议室名"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlue"
+        />
     <Spinner
         android:id="@+id/room_spinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.231"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintLeft_toRightOf="@+id/choose_room"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_date_picker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/choose_room"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
         android:text="日期选择"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/room_spinner" />
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlue"
+        android:background="@drawable/btn_bottom_confirm_bg"/>
 
     <TextView
         android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="2019"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_date_picker"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_date_picker"
-        app:layout_constraintTop_toTopOf="@+id/btn_date_picker" />
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlue"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/btn_date_picker"
+        app:layout_constraintLeft_toRightOf="@id/btn_date_picker" />
+
+    <TextView
+        android:id="@+id/intervals"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlue"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_date_picker"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+         />
+
 
     <TextView
         android:id="@+id/sttime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_sttime_picker"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_sttime_picker"
-        app:layout_constraintTop_toTopOf="@+id/btn_sttime_picker" />
+        android:layout_marginLeft="20dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/btn_sttime_picker"
+        app:layout_constraintLeft_toRightOf="@id/btn_sttime_picker"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlue"/>
 
     <Button
         android:id="@+id/btn_sttime_picker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:text="@string/start_time"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/intervals" />
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlue"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/intervals"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_bottom_confirm_bg"/>
 
     <TextView
         android:id="@+id/edtime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_edtime_picker"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_edtime_picker"
-        app:layout_constraintTop_toTopOf="@+id/btn_edtime_picker" />
+        android:layout_marginLeft="20dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/btn_edtime_picker"
+        app:layout_constraintLeft_toRightOf="@id/btn_edtime_picker"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlue"/>
 
     <Button
         android:id="@+id/btn_edtime_picker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:text="@string/end_time"
-        app:layout_constraintEnd_toEndOf="@+id/btn_sttime_picker"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/btn_sttime_picker"
-        app:layout_constraintTop_toBottomOf="@+id/btn_sttime_picker" />
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlue"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_sttime_picker"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_bottom_confirm_bg"/>
 
     <EditText
         android:id="@+id/topic_input"
@@ -88,6 +131,9 @@
         android:layout_marginRight="24dp"
         android:hint="@string/prompt_topic"
         android:inputType="text"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.434"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,20 +143,15 @@
         android:id="@+id/save_meeting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="@string/save"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/topic_input" />
+        app:layout_constraintTop_toBottomOf="@+id/topic_input"
+        android:background="@drawable/btn_bottom_confirm_bg"/>
 
-    <TextView
-        android:id="@+id/intervals"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_date_picker" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

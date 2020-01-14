@@ -9,32 +9,35 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@mipmap/login"
+    android:fitsSystemWindows="true"
     tools:context=".LoginActivity">
 
     <EditText
         android:id="@+id/account"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="24dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="70dp"
 
         android:digits="0123456789qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM"
         android:hint="@string/prompt_name"
         android:inputType="text"
         android:maxLength="15"
         android:selectAllOnFocus="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <EditText
         android:id="@+id/password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="40dp"
 
         android:hint="@string/prompt_password"
         android:inputType="textPassword"
@@ -42,20 +45,22 @@
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/account" />
+        app:layout_constraintTop_toBottomOf="@+id/account"
+        />
 
     <Button
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginTop="30dp"
         android:enabled="true"
         android:text="@string/action_sign_in"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlue"
+        android:background="@drawable/btn_bottom_confirm_bg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
 
@@ -63,10 +68,13 @@
         android:id="@+id/signup_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:text="@string/action_sign_up"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlue"
+        android:background="@drawable/btn_bottom_confirm_bg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login" />
 
@@ -74,11 +82,14 @@
         android:id="@+id/signup_admin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="20dp"
         android:text="@string/action_sign_up_admin"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlue"
+        android:background="@drawable/btn_bottom_confirm_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signup_user"
         app:layout_constraintVertical_bias="0.0" />

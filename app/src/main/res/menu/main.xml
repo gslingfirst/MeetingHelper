@@ -3,9 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/share"
-        android:title="@string/share" />
-    <item
-        android:id="@+id/log_out"
-        android:title="@string/log_out" />
+        android:id="@+id/history_delete_all"
+        android:icon="@drawable/delete_80"
+        android:title="delete"
+        app:showAsAction="always"/>
 </menu>

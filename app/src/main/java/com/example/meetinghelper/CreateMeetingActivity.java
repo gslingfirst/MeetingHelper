@@ -1,11 +1,10 @@
 package com.example.meetinghelper;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,6 +17,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -49,6 +50,8 @@ public class CreateMeetingActivity extends AppCompatActivity {
     private int room_idx = -1; // 会议室列表选中项的下标
     private Calendar stTimeCalendar, edTimeCalendar;
     private List<Interval> intervals = new ArrayList<>();
+    int type = -1;
+    private MyDatabaseHelper dbHelper;
 
     @Override
     public void onBackPressed() {
@@ -59,9 +62,10 @@ public class CreateMeetingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_meeting);
+        dbHelper = new MyDatabaseHelper(this,"MeetingDB.db",null,1);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
         datePicker = findViewById(R.id.btn_date_picker);
         tvDate = findViewById(R.id.tv_date);
         btnSave = findViewById(R.id.save_meeting);
@@ -76,7 +80,7 @@ public class CreateMeetingActivity extends AppCompatActivity {
         Intent intent = getIntent();
         user_id = intent.getIntExtra("user_id", 0);
         admin = intent.getStringExtra("admin");
-
+        type = intent.getIntExtra("position",-1);
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, roomNames);
         roomSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -267,6 +271,10 @@ public class CreateMeetingActivity extends AppCompatActivity {
                                     MeetingItem meetingItem = new MeetingItem(room.getName(), sttime, edtime,
                                             meeting_id, topic, room.getLocation(), room.getDesc());
                                     intent.putExtra("new_meeting", meetingItem);
+                                    if(type != -1)
+                                    {
+                                        intent.putExtra("position", type);
+                                    }
                                     setResult(RESULT_OK, intent);
                                     finish();
                                 }
@@ -371,8 +379,10 @@ public class CreateMeetingActivity extends AppCompatActivity {
                     final String status = jsonObject.getString("status");
                     if (status.equals("ok")) {
                         String roomsStr = jsonObject.getJSONArray("rooms").toString();
-                        roomList = new Gson().fromJson(roomsStr, new TypeToken<List<Room>>() {
+                        List<JsonRoom> jlist = new ArrayList<JsonRoom>();
+                        jlist = new Gson().fromJson(roomsStr, new TypeToken<List<JsonRoom>>() {
                         }.getType());
+                        transToRoom(jlist);
                         roomNames.clear();
                         for (Room room : roomList) {
                             roomNames.add(room.getName());
@@ -399,11 +409,23 @@ public class CreateMeetingActivity extends AppCompatActivity {
                         });
                     }
                 } catch (Exception e) {
-
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            closeProgressDialog();
+                            Toast.makeText(CreateMeetingActivity.this, "创建失败", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
-
             }
         });
+    }
+
+    public void transToRoom(List<JsonRoom> jlist){
+        roomList.clear();
+        for(int i = 0; i < jlist.size(); i++){
+            roomList.add(new Room(jlist.get(i).room_id,jlist.get(i).name,jlist.get(i).location,jlist.get(i).desc, 0));
+        }
     }
 
     private void showProgressDialog(String msg) {

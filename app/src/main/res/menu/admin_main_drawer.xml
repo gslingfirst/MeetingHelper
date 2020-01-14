@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/admin_nav_share"
+            android:icon="@drawable/ic_menu_share"
+            android:title="分享"/>
+        <item
+            android:id="@+id/admin_nav_setting"
+            android:icon="@drawable/setting_48"
+            android:title="设置"/>
+        <item
+            android:id="@+id/admin_nav_logout"
+            android:icon="@drawable/logou_48t"
+            android:title="退出登录"/>
+    </group>
+</menu>

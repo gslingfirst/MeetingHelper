@@ -3,6 +3,8 @@
     package="com.example.meetinghelper">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
 
     <application
         android:allowBackup="true"
@@ -10,9 +12,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".UserActivity" />
-        <activity android:name=".AdminActivity" />
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".ModifyAlarmActivity" />
+        <activity
+            android:name=".MeetingAlarmManagerActiivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".CreateRoomActivity" />
+        <activity android:name=".ComingMeetingActivity" />
+        <activity android:name=".MeetingHistory" />
+        <activity
+            android:name=".UserActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".AdminActivity"
+            android:launchMode="singleTask" />
         <activity android:name=".CreateMeetingActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>

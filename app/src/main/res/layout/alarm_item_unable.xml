@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="@android:color/transparent"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardElevation="6dp"
+    app:cardCornerRadius="6dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/alarm_icon_unable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/alarm_clock"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp" />
+        <TextView
+            android:id="@+id/alarm_name_1_un"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/alarm_icon_unable"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:textColor="@color/colorGrey3"
+            android:textStyle="bold"
+            android:text="会议主题:" />
+
+        <TextView
+            android:id="@+id/alarm_meeting_topic_unable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/alarm_name_1_un"
+            app:layout_constraintBaseline_toBaselineOf="@id/alarm_name_1_un"
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:textColor="@color/colorGrey3"
+            android:textStyle="bold"
+            android:text="topic" />
+
+        <TextView
+            android:id="@+id/alarm_name_2_un"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/alarm_name_1_un"
+            app:layout_constraintLeft_toRightOf="@id/alarm_icon_unable"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/colorGrey3"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:text="会议室:" />
+
+        <TextView
+            android:id="@+id/alarm_room_name_unable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/alarm_name_2_un"
+            app:layout_constraintBaseline_toBaselineOf="@id/alarm_name_2_un"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorGrey3"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:text="301" />
+        <TextView
+            android:id="@+id/alarm_name_3_un"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/alarm_name_2_un"
+            app:layout_constraintLeft_toRightOf="@id/alarm_icon_unable"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:textSize="14dp"
+            android:textColor="@color/colorGrey3"
+            android:textStyle="bold"
+            android:text="会议时间:" />
+        <TextView
+            android:id="@+id/alarm_meeting_item_time_unable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/alarm_name_3_un"
+            app:layout_constraintBaseline_toBaselineOf="@id/alarm_name_3_un"
+            android:layout_marginLeft="10dp"
+            android:textSize="14dp"
+            android:textColor="@color/colorGrey3"
+            android:textStyle="bold"
+            android:text="2019-12-26 3:00-5:00" />
+        <TextView
+            android:id="@+id/alarm_name_4_un"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/alarm_name_3_un"
+            app:layout_constraintLeft_toRightOf="@id/alarm_icon_unable"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:textSize="14dp"
+            android:textColor="@color/colorGrey3"
+            android:textStyle="bold"
+            android:text="提醒开始时间:" />
+        <TextView
+            android:id="@+id/alarm_start_time_unable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/alarm_name_4_un"
+            app:layout_constraintBaseline_toBaselineOf="@id/alarm_name_4_un"
+            android:layout_marginLeft="10dp"
+            android:textSize="14dp"
+            android:textColor="@color/colorGrey3"
+            android:textStyle="bold"
+            android:text="0" />
+        <TextView
+            android:id="@+id/alarm_name_5_un"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/alarm_name_4_un"
+            app:layout_constraintLeft_toRightOf="@id/alarm_icon_unable"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:textSize="14dp"
+            android:textColor="@color/colorGrey3"
+            android:textStyle="bold"
+            android:text="提醒持续时间:" />
+        <TextView
+            android:id="@+id/alarm_last_time_unable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/alarm_name_5_un"
+            app:layout_constraintBaseline_toBaselineOf="@id/alarm_name_5_un"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="14dp"
+            android:textColor="@color/colorGrey3"
+            android:textStyle="bold"
+            android:text="0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,10 +1,7 @@
 package com.example.meetinghelper;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -14,7 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import org.json.JSONArray;
+import androidx.appcompat.app.AppCompatActivity;
+
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -28,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText accountET, passwdET;
     private int user_id;
     private String admin;
+    private String account;
     private SharedPreferences sp;
 
     @Override
@@ -36,10 +35,13 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         sp = PreferenceManager.getDefaultSharedPreferences(this);
         user_id = sp.getInt("user_id", -1);
+        Log.d("zjj", user_id+" user_id");
         if (user_id != -1) {
             // 已登录
             int isadmin = sp.getInt("isadmin", 0);
+            Log.d("zjj", isadmin+" isadmin");
             if (isadmin != 0) {
+                Log.d("zjj", "jmpToAdmin");
                 jmpToAdmin();
             } else {
                 admin = sp.getString("admin", "");
@@ -212,15 +214,18 @@ public class LoginActivity extends AppCompatActivity {
 
     // 跳至管理员页面
     private void jmpToAdmin() {
-        Intent intent = new Intent(this, AdminActivity.class);
-        startActivity(intent);
-        finish();
+        //Intent intent = new Intent(this, AdminActivity.class);
+        //startActivity(intent);
+        account = sp.getString("account",admin);
+        Log.d("zjj","get account"+account);
+        AdminActivity.adminActionStart(this, user_id,account);
+        //finish();
     }
 
     // 跳至用户页面，传入user_id, admin参数
     private void jmpToUser() {
         UserActivity.actionStart(this, user_id, admin);
-        finish();
+        //finish();
     }
 
     private void signupAdminAction() {

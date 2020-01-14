@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">MeetingHelper</string>
-    <string name="host">http://111.229.5.111:8080</string>
+    <string name="host">http://111.229.177.16:8080</string>
     <string name="prompt_password">输入密码，最多15个字符</string>
     <string name="prompt_name">账户名，字母或数字，最多15个</string>
     <string name="prompt_admin">输入管理员的名字</string>
@@ -19,4 +19,18 @@
     <string name="log_out">退出登录</string>
     <string name="share">分享</string>
     <string name="save">保存</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="index_bottom_bar_home">首页</string>
+    <string name="index_bottom_bar_dynamic_state">动态</string>
+    <string name="index_bottom_bar_integral">积分</string>
+    <string name="index_bottom_bar_me">我的</string>
+    <string name="fragment_example_string">示例 %1$s</string>
+
 </resources>

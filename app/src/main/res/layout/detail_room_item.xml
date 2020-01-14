@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="@android:color/transparent"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardElevation="6dp"
+    app:cardCornerRadius="6dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/detail_room_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/meeting_icon_new"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp" />
+        <TextView
+            android:id="@+id/detail_room_desc_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/detail_room_icon"
+            app:layout_constraintLeft_toRightOf="@id/detail_room_icon"
+            android:layout_marginLeft="20dp"
+            android:textSize="20dp"
+            android:textColor="@color/colorRoom"
+            android:textStyle="bold"
+            android:text="会议室名:" />
+        <TextView
+            android:id="@+id/admin_detail_room_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/detail_room_desc_1"
+            app:layout_constraintBaseline_toBaselineOf="@id/detail_room_desc_1"
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"
+            android:textColor="@color/colorRoom"
+            android:textStyle="bold"
+            android:text="201" />
+
+        <TextView
+            android:id="@+id/detail_room_desc_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/detail_room_desc_1"
+            app:layout_constraintLeft_toRightOf="@id/detail_room_icon"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorRoom"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="会议室地点:" />
+
+        <TextView
+            android:id="@+id/detail_room_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/detail_room_desc_2"
+            app:layout_constraintBaseline_toBaselineOf="@id/detail_room_desc_2"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorRoom"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="二教" />
+        <TextView
+            android:id="@+id/detail_room_desc_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/detail_room_icon"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop = "20dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="14dp"
+            android:textColor="@color/colorRoom"
+            android:textStyle="bold"
+            android:text="描述:" />
+        <TextView
+            android:id="@+id/detail_room_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@id/detail_room_desc_3"
+            app:layout_constraintBaseline_toBaselineOf="@id/detail_room_desc_3"
+            android:layout_marginLeft="10dp"
+            android:textSize="14dp"
+            android:textColor="@color/colorRoom"
+            android:textStyle="bold"
+            android:text="nothing" />
+        <ImageView
+            android:id="@+id/admin_deleteItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/delete_64"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_room_desc"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"/>
+        <ImageView
+            android:id="@+id/admin_modifyItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/modify_64"
+            app:layout_constraintRight_toLeftOf="@id/admin_deleteItem"
+            app:layout_constraintTop_toBottomOf="@+id/detail_room_desc"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
